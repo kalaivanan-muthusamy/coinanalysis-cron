@@ -23,7 +23,7 @@ export class MarketListenerService {
           'market_data/candles',
           {
             pair: market?.pair,
-            interval: '1m',
+            interval: '5m',
             limit: 2
           }
         );
