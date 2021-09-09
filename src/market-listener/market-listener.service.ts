@@ -10,7 +10,7 @@ export class MarketListenerService {
   constructor(private candlesService: CandlesService) {}
 
   // Listen to the market data store the candles in database for further analysis
-  @Cron('55 */4 * * * *')
+  @Cron('55 4,9,14,19,24,29,34,39,44,49,54,59 * * * *')
   listenMarketData() {
     console.info(new Date(), 'Listening market data');
     const preferredMarketChunks = chunkArray(PREFERRED_MARKETS, 8);
