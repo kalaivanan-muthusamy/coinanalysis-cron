@@ -20,6 +20,7 @@ export class MarketListenerService {
     console.info(new Date(), 'Listening market data');
     const interval = '15m';
     const allMarkets = await this.marketsService.getMarketInfo({
+      filter: { status: 'TRADING' },
       select: 'symbol'
     });
 
