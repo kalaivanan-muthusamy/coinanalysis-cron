@@ -18,7 +18,7 @@ export class MarketListenerService {
   @Cron('30 14,29,44,59 * * * *')
   async listenMarketData() {
     console.info(new Date(), 'Listening market data');
-    const interval = '3m';
+    const interval = '15m';
     const allMarkets = await this.marketsService.getMarketInfo({
       select: 'symbol'
     });

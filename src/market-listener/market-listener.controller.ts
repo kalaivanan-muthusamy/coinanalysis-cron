@@ -9,4 +9,9 @@ export class MarketListenerController {
   async loadInitital() {
     return await this.marketListenerService.storeCandlestickData({});
   }
+
+  @Post('update')
+  async update() {
+    return await this.marketListenerService.listenMarketData();
+  }
 }
