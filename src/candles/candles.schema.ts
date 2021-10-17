@@ -39,7 +39,7 @@ export const CandlesSchema = new Schema(
     timestamps: true
   }
 );
-CandlesSchema.index({ pair: 1, dateTime: 1 }, { unique: true });
+// CandlesSchema.index({ pair: 1, dateTime: 1 }, { unique: true });
 
 export interface CandlesModel extends Document {
   _id: Types.ObjectId;

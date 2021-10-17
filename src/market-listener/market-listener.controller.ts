@@ -7,6 +7,6 @@ export class MarketListenerController {
 
   @Post('load-initial')
   async loadInitital() {
-    return await this.marketListenerService.loadInitialData();
+    return await this.marketListenerService.storeCandlestickData({});
   }
 }

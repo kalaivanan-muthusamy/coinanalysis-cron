@@ -4,6 +4,8 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MarketListenerModule } from './market-listener/market-listener.module';
 import { CandlesModule } from './candles/candles.module';
+import { MarketsModule } from './markets/markets.module';
+import { BinanceApiService } from './binance-api/binance-api.service';
 
 @Module({
   imports: [
@@ -11,9 +13,10 @@ import { CandlesModule } from './candles/candles.module';
     ScheduleModule.forRoot(),
     MongooseModule.forRoot(process.env.MONGO_CONNECTION_URI),
     MarketListenerModule,
-    CandlesModule
+    CandlesModule,
+    MarketsModule
   ],
   controllers: [],
-  providers: []
+  providers: [BinanceApiService]
 })
 export class AppModule {}
